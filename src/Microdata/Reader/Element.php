@@ -170,6 +170,10 @@ class Element extends \DOMElement
                     return $datetime;
                 }
             default:
+                $content = $this->getAttribute('content');
+                if ($content) {
+                    return $content;
+                }
                 return $this->textContent;
         }
     }
